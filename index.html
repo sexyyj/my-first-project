@@ -21,16 +21,14 @@ var map = new naver.maps.Map('map', mapOptions);
     position: new naver.maps.LatLng(37.3595704, 127.105399),
     map: map
 });
-    var mapOptions = {
-    center: new naver.maps.LatLng(37.3595704, 127.105900),
-    zoom: 10
-};
-var map = new naver.maps.Map('map', mapOptions);
-    
-     var marker2 = new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.3595704, 127.105900),
-    map: map
+    var imageMarker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.3637770, 127.1174332),
+    map: map,
+    title: 'imageMarker',
+    icon: HOME_PATH +"/img/example/pin_default.png",
+    animation: naver.maps.Animation.BOUNCE
 });
+    
     
 </script>
 
