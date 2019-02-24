@@ -8,7 +8,7 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4s2pd0cqcc&submodules=geocoder"></script>
 </head>
 <body>
-<div id="map" style="width:100%;height:400px;"></div>
+<div id="map" style="width:100%;height:500px;"></div>
     
 
 <script>
@@ -19,77 +19,29 @@
     
 var map = new naver.maps.Map(document.getElementById('map'), {zoom: 11, mapTypeControl: true});
 
-map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(37.3724620, 127.1051714),
-                                             new naver.maps.LatLng(37.3542795, 127.1174332)));
+map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(30, 120),
+                                             new naver.maps.LatLng(40, 130)));
 
 var urlMarker = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.3542795, 127.1072556),
     map: map,
-    title: 'urlMarker',
-    icon: HOME_PATH +"/img/example/pin_default.png",
-    animation: naver.maps.Animation.DROP
+    title: 'urlMarker'
+   
 });
-
-naver.maps.Event.addListener(urlMarker, 'click', function() {
-    if (urlMarker.getAnimation() !== null) {
-        urlMarker.setAnimation(null);
-    } else {
-        urlMarker.setAnimation(naver.maps.Animation.BOUNCE);
-    }
+ 
+var marker1 = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.29614, 127.02774),
+    map: map,
+    title: 'marker1'
+   
 });
 
 var imageMarker = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.3637770, 127.1174332),
     map: map,
-    title: 'imageMarker',
-    icon: HOME_PATH +"/img/example/pin_default.png",
-    animation: naver.maps.Animation.BOUNCE
+    title: 'imageMarker'
 });
 
-var symbolMarker = new naver.maps.Marker({
-    map: map,
-    position: new naver.maps.LatLng(37.3692417, 127.1134740),
-    title: 'symbolMarker',
-    icon: {
-        path: [
-            new naver.maps.Point(0, 70), new naver.maps.Point(20, 100), new naver.maps.Point(40, 70),
-            new naver.maps.Point(30, 70), new naver.maps.Point(70, 0), new naver.maps.Point(10, 70)
-        ],
-        style: "closedPath",
-        anchor: new naver.maps.Point(23, 103),
-        fillColor: '#ff0000',
-        fillOpacity: 1,
-        strokeColor: '#000000',
-        strokeStyle: 'solid',
-        strokeWeight: 3
-    },
-    shape: {
-        coords: [0, 70, 20, 100, 40, 70, 30, 70, 70, 0, 10, 70],
-        type: "poly"
-    },
-    animation: naver.maps.Animation.BOUNCE
-});
-
-var htmlMarker = new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.3578575, 127.1063746),
-    map: map,
-    title: 'htmlMarker',
-    icon: {
-        content: [
-            '<div class="cs_mapbridge">',
-            '<div class="map_group _map_group">',
-            '<div class="map_marker _marker tvhp tvhp_big">',
-            '<span class="ico _icon"></span>',
-            '<span class="shd"></span>',
-            '</div>',
-            '</div>',
-            '</div>'
-        ].join(''),
-        size: new naver.maps.Size(38, 58),
-        anchor: new naver.maps.Point(19, 58)
-    },
-    animation: naver.maps.Animation.BOUNCE
-});
     var infoWindow = new naver.maps.InfoWindow({
     anchorSkew: true
 });
@@ -151,8 +103,6 @@ function searchAddressToCoordinate(address) {
                 addrType +' '+ item.address +'<br />',
                 '</div>'
             ].join('\n'));
-
-
         map.setCenter(point);
         infoWindow.open(map, point);
     });
