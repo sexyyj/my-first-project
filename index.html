@@ -11,24 +11,26 @@
 <div id="map" style="width:100%;height:400px;"></div>
 
 <script>
-var mapOptions = {
+var mapOption
+s = {
     center: new naver.maps.LatLng(37.3595704, 127.105399),
     zoom: 10
 };
+    var map = new naver.maps.Map('map', mapOptions);
     
     map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(37.3724620, 127.1051714),
                                              new naver.maps.LatLng(37.3542795, 127.1174332)));
     
-var map = new naver.maps.Map('map', mapOptions);
+
     
     var marker1 = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.3595704, 127.105399),
     map: map
 });
+    
     var imageMarker = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.3637770, 127.1174332),
-    map: map,
-    title: 'imageMarker'
+    map: map
    
 });
     
