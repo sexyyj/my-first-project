@@ -15,6 +15,10 @@ var mapOptions = {
     center: new naver.maps.LatLng(37.3595704, 127.105399),
     zoom: 10
 };
+    
+    map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(37.3724620, 127.1051714),
+                                             new naver.maps.LatLng(37.3542795, 127.1174332)));
+    
 var map = new naver.maps.Map('map', mapOptions);
     
     var marker1 = new naver.maps.Marker({
@@ -24,9 +28,8 @@ var map = new naver.maps.Map('map', mapOptions);
     var imageMarker = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.3637770, 127.1174332),
     map: map,
-    title: 'imageMarker',
-    icon: HOME_PATH +"/img/example/pin_default.png",
-    animation: naver.maps.Animation.BOUNCE
+    title: 'imageMarker'
+   
 });
     
     
