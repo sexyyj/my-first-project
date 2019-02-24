@@ -67,7 +67,7 @@ function searchCoordinateToAddress(latlng) {
 // result by latlng coordinate
 function searchAddressToCoordinate(address) {
     naver.maps.Service.geocode({
-        address: address
+        address: '불정로 6'
     }, function(status, response) {
         if (status === naver.maps.Service.Status.ERROR) {
             return alert('Something Wrong!');
