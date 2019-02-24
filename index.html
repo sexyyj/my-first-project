@@ -15,32 +15,42 @@
     
 
     
-    var HOME_PATH = window.HOME_PATH || '.';
+
     
 var map = new naver.maps.Map(document.getElementById('map'), {zoom: 11, mapTypeControl: true});
 
-map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(30, 120),
-                                             new naver.maps.LatLng(40, 130)));
+map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(36, 126),
+                                             new naver.maps.LatLng(38, 128)));
 
-var urlMarker = new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.3542795, 127.1072556),
-    map: map,
-    title: 'urlMarker'
+var mk1 = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.29648, 126.99392),
+    
+    map: map
+});//강식당
+
+
+var mk2 = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.29782, 126.99134),
+    
+    map: map
+});//고봉인 김밥
+
+var mk3 = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.2955, 127.02721),
+    
+    map: map
+    
    
-});
+});//관우성
+
+var mk4 = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.29601, 126.99384),
+    
+    map: map
+
+});//국수나무 
  
-var marker1 = new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.29614, 127.02774),
-    map: map,
-    title: 'marker1'
-   
-});
 
-var imageMarker = new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.3637770, 127.1174332),
-    map: map,
-    title: 'imageMarker'
-});
 
     var infoWindow = new naver.maps.InfoWindow({
     anchorSkew: true
