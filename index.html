@@ -11,15 +11,14 @@
 <div id="map" style="width:100%;height:400px;"></div>
 
 <script>
-var mapOption
-s = {
-    center: new naver.maps.LatLng(37.3595704, 127.105399),
-    zoom: 10
-};
-    var map = new naver.maps.Map('map', mapOptions);
-    
-    map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(37.3724620, 127.1051714),
+var HOME_PATH = window.HOME_PATH || '.';
+var map = new naver.maps.Map(document.getElementById('map'), {zoom: 11});
+
+map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(37.3724620, 127.1051714),
                                              new naver.maps.LatLng(37.3542795, 127.1174332)));
+    
+    
+    
     
 
     
