@@ -17,7 +17,7 @@
     
     var HOME_PATH = window.HOME_PATH || '.';
     
-var map = new naver.maps.Map(document.getElementById('map'), {zoom: 11});
+var map = new naver.maps.Map(document.getElementById('map'), {zoom: 11, mapTypeControl: true});
 
 map.fitBounds(naver.maps.LatLngBounds.bounds(new naver.maps.LatLng(37.3724620, 127.1051714),
                                              new naver.maps.LatLng(37.3542795, 127.1174332)));
@@ -93,6 +93,7 @@ var htmlMarker = new naver.maps.Marker({
     var infoWindow = new naver.maps.InfoWindow({
     anchorSkew: true
 });
+    
 
 map.setCursor('pointer');
 
