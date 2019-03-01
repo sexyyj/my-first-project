@@ -213,43 +213,45 @@ function searchAddressToCoordinate(address) {
         infoWindow.open(map, point);
     });
 }
-    
 function initGeocoder() {
-    
-    
-    naver.maps.Event.addListener("click", function(e) {
-    if (infowindow.getMap()) {
-        infowindow.close();
-    } else {
-      //  infowindow.open(map, marker);
-        
-       
-        
+    map.addListener('click', function(e) {
+
+    	if(infowindow.getMap())
+    	{
+    		infowindow.close();
+    	}else {
         searchCoordinateToAddress(e.coord);
-  
+        }
+    });
     $('#address').on('keydown', function(e) {
         var keyCode = e.which;
         if (keyCode === 13) { // Enter Key
             searchAddressToCoordinate($('#address').val());
         }
     });
-        
     $('#submit').on('click', function(e) {
         e.preventDefault();
         searchAddressToCoordinate($('#address').val());
     });
-        
     searchAddressToCoordinate('정자동 178-1');
-        
-    }
-});//마커 누르면 정보 팝업
-    
- 
 }
     
 naver.maps.onJSContentLoaded = initGeocoder;
 
-infowindow.open(map, marker);//마커 누르면 정보 팝업
+
+/*var infowindow = new naver.maps.InfoWindow({
+    content: contentString
+});//sork tnwjd
+
+naver.maps.Event.addListener(marker, "click", function(e) {
+    if (infowindow.getMap()) {
+        infowindow.close();
+    } else {
+        infowindow.open(map, marker);
+    }
+});//마커 누르면 정보 팝업
+
+infowindow.open(map, marker);//마커 누르면 정보 팝업 
 
 
 </script>
