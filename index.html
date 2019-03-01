@@ -184,7 +184,17 @@ function searchCoordinateToAddress(latlng) {
                 htmlAddresses.join('<br />'),
                 '</div>'
             ].join('\n'));
+        
+        var contentString=[
+                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                '<h4 style="margin-top:5px;">검색 주소 : '+ response.result.userquery +'</h4><br />',
+                addrType +' '+ item.address +'<br />',
+                '</div>'
+            ].join('\n'));
+    
+        
         infoWindow.open(map, latlng);
+        
     });
 }
 // result by latlng coordinate
@@ -204,6 +214,7 @@ function searchAddressToCoordinate(address) {
                 addrType +' '+ item.address +'<br />',
                 '</div>'
             ].join('\n'));
+        
         map.setCenter(point);
         infoWindow.open(map, point);
     });
@@ -229,7 +240,7 @@ naver.maps.onJSContentLoaded = initGeocoder;
 
 var infowindow = new naver.maps.InfoWindow({
     content: contentString
-});
+});//sork tnwjd
 
 naver.maps.Event.addListener(marker, "click", function(e) {
     if (infowindow.getMap()) {
