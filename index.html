@@ -163,7 +163,7 @@ map.setCursor('pointer');
 // search by tm128 coordinate
 function searchCoordinateToAddress(latlng) {
     var tm128 = naver.maps.TransCoord.fromLatLngToTM128(latlng);
-    infoWindow.close();
+  //  infoWindow.close();
     naver.maps.Service.reverseGeocode({
         location: tm128,
         coordType: naver.maps.Service.CoordType.TM128
@@ -213,15 +213,6 @@ function searchAddressToCoordinate(address) {
         infoWindow.open(map, point);
     });
 }
-    
-    var infowindow = new naver.maps.InfoWindow({
-    content: contentString
-});//sork tnwjd
-
-
-
-
-
     
 function initGeocoder() {
     
