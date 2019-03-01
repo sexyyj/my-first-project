@@ -217,11 +217,11 @@ function searchAddressToCoordinate(address) {
 function initGeocoder() {
     
     
-    naver.maps.Event.addListener(marker, "click", function(e) {
+    naver.maps.Event.addListener("click", function(e) {
     if (infowindow.getMap()) {
         infowindow.close();
     } else {
-        infowindow.open(map, marker);
+      //  infowindow.open(map, marker);
         
        
         
